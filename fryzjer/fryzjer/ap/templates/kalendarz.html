@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Twój Barber</title>
+    <link rel="stylesheet" href="{% static 'Kal_Style.css' %}">
+    <link rel="stylesheet" href="{% static 'Main_Style.css' %}">
+</head>
+<body>
+    <nav>
+        <img src="{% static 'logo.jpng' %}" alt="logo">
+        <div id="F">
+            <ul>
+                <li><a href="{% url 'index' %}">Strona Główna</a></li>
+                <li><a href="{% url 'kalen' %}">Umów wizytę</a></li>
+                
+                <li><a href="{% url 'kont'%}">Kontakt</a></li>
+            </ul>
+        </div>
+        <script>
+            function redirectToURL(url) {
+                window.location.href = url;
+            }
+        </script>
+    </nav>
+
+    <main>
+        <article id = "Banner">
+            <img src="{% static 'banner.jpg' %}" alt="baner">
+        </article>
+        <article id = "Tresc">
+            
+                <script src="{% static 'kalendar.js' %}"></script>
+                <div id = "Kalendarz">  <!-- %Kalendarz -->
+                </div>
+        </article>
+    </main>
+
+    <footer>
+            Nr: XXX-XXX-XXX   E-mail: e-mail@mail.com
+    </footer>
+</body>
+</html>

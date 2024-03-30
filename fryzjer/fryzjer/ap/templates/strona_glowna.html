@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Twój Barber</title>
+    <link rel="stylesheet" type = "text/css" href="{% static 'Main_Style.css' %}">
+    <style>
+        *{
+            color:white;
+        }
+        #Tresc ul{
+            list-style-type: none;
+            margin-top: 3px;
+        }
+        nav>img{
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="{% static 'logo2k.png' %}" alt="logo">
+        <div id="F">
+            <ul>
+                <li><a href='main'>Strona Główna</a></li>
+                <li><a href='admin'>Admin</a></li>
+                
+                
+            </ul>
+        </div>
+        <script>
+            function redirectToURL(url) {
+                window.location.href = url;
+            }
+        </script>
+    </nav>
+
+    <main>
+        <article id = "Banner">
+            <img src="{% static 'banner.jpg' %}" alt="baner">
+        </article>
+        <!-- 
+            WYJEBAĆ do PLIKU Z REZERWACJAMI  TU MA BYĆ OGÓLNE INFO 
+            <article id = "Tresc">
+                <ul>
+                   <h1> 
+                        <li>Strzyzenie: 65zl             / 30min</li>
+                        <li>Strzyzenie od 0: 70zl        / 30min</li>  
+                        <li>Strzyzenie dziecka 1-6: 55zl / 30min </li>           
+                        <li>Strzyzenie na 0: 45zl        / 30min</li>
+                        <li>Farbowanie: 50zl             / 30min</li>
+                    </h1>
+                </ul>
+        </article> -->
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+</html>

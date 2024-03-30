@@ -1,0 +1,61 @@
+<!-- 
+    Miejsce admina po loginie 
+    Weryfikacja uprawnien
+-->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Twój Barber</title>
+    <link rel="stylesheet" href="{% static 'Main_Style.css' %}">
+    <style>
+        *{
+            color: white;
+        }
+        nav>img{
+            width: 150px;
+            height: 150px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="{% static 'logo2k.png' %}" alt="logo">
+        <div id="F">
+            <ul>
+                <li><a href="main">Strona Główna</a></li>
+                <li><a href="admin">Admin</a></li>
+                
+            </ul>
+        </div>
+        <script>
+            function redirectToURL(url) {
+                window.location.href = url;
+            }
+        </script>
+    </nav>
+
+    <main>
+        <article id = "Banner">
+            <img src="{% static 'banner.jpg'%}" alt="baner">
+        </article>
+        <article id = "Tresc">
+            <!-- 
+                Wybor wszystkich dostepnych akcji dla admina np: 
+                    sprawdzenie + edycja danych (rezerwacji uzytkownikow),
+                    mozlliwosc odwolywania rezerwacji za uzytkownikow,
+                    mozliwosc blokowania / usuwania terminow, 
+                    mozliwosc edycji (usuniecia) uzytkownika, 
+                    zmiena uprawnien uzytkownikow, 
+             -->
+        </article>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+</html>

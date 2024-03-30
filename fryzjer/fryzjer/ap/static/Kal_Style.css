@@ -1,0 +1,14 @@
+#Kalendarz
+{
+    height: 70vh;
+}
+td{
+    height: 5%;
+}
+#Kalendarz table tbody tr td{
+    height: 5vh; width: 7vh;
+    text-align: center;
+}
+#Kalendarz table{
+    margin-top: 3vh;
+}

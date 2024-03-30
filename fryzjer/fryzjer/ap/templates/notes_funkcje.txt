@@ -1,0 +1,13 @@
+czy_przywileje()
+    input
+    - Id sesji
+    - Id uzytkownika_zalogowany if none : null
+    output
+    - privilages level of loged user
+    how it works - 
+        pytanie bazy danych o poziom przywileji uzytkownika zalogowany maybe
+        exceptions:
+        - jezeli zostal podany null jako id uzytkownika :
+            zwrocenie false 
+            zwrocenie poziomu 0
+        
