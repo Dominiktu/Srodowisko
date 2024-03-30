@@ -1,6 +1,7 @@
 body{
     background-color: darkgrey;
     font-family: 'Arial';
+    margin: 0;
 }
 #banner{
     width: 100%;
@@ -11,15 +12,27 @@ body{
     float: left;
 }
 #banner h1{
+    font-family: 'Comic Sans MS';
     float: left;
+    font-size: 50px;
+    display: block;
+    margin-top: 40px;
+    margin-left: 10px;
 }
 #menu{
     width: 20%;
+    float: left;
     height: 700px;
+    background-color: gray;
+    padding: 5px;
+    border-radius: 0px 5px 5px 0px;
+    box-sizing: border-box;
 }
 #context{
     width: 80%;
+    float: left;
     height: 700px;
+    box-sizing: border-box;
 }
 #stopka{
     width: 100%;
