@@ -14,7 +14,7 @@ def strona_glowna(request): # <-- to strona główna
 def tm(request):
     return redirect("strona_glowna")
 
-def Zaloguj(reqest):
+def zaloguj(reqest):
     template = loader.get_template('logowanie.html')
     context ={
 
