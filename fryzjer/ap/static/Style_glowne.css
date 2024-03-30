@@ -39,6 +39,7 @@ body{
     box-sizing: border-box;
     padding: 10px;
     background-color: lightgray;
+    overflow: auto;
 }
 
 #context p{
@@ -52,7 +53,7 @@ body{
     text-align: center;
     clear: both;
     box-sizing: border-box;
-    padding: 30px;
+    padding-top: 45px;
 }
 
 #mapy{

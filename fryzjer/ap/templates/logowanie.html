@@ -4,48 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Twój Barber</title>
-    <link rel="stylesheet" href="{% static 'Main_Style.css' %}">
-    <style>
-        *{
-            color: white;
-        }
-
-    </style>
+    <link rel="stylesheet" type = "text/css" href="{% static 'Style_glowne.css' %}">
+    <link rel="stylesheet" type = "text/css" href="{% static 'style/Style_login.css' %}">
 </head>
 <body>
-    <nav>
-        <img src="logo.png" alt="logo">
-        <div id="F">
-            <ul>
-                <li><a href="{% url 'strona_glowna' %}">Strona Główna</a></li>
-                <!-- MENU DO CAŁowitego REWORK
-                    
-                <li><a href="{% url 'kalen' %}">Umów wizytę</a></li>
-                <li><a href="{% url 'kontantk'%}">Kontakt</a></li> -->
-            </ul>
-        </div>
-        <script>
-            function redirectToURL(url) {
-                window.location.href = url;
-            }
-        </script>
-    </nav>
-
-    <main>
-        <article id = "Banner">
-            <img src="{% static 'banner.jpg'%}" alt="baner">
-        </article>
-        <article id = "Tresc">
-            <form method="post">
-                <!-- {% csrf_token %} -->
-                {{ form.as_p }}
-                <button type="submit">Submit</button>
+    <div id="banner">
+        <img src="{% static 'logo2k.png' %}" class="logo" alt="logo">
+        <h1>
+            Twój Barber
+        </h1>
+    </div>
+    <div id = "menu">
+        <ul>
+            <li><a href="{% url 'strona_glowna' %}">Strona główna</a></li>
+            <li><a href="{% url 'zaloguj' %}">Zaloguj</a></li>
+            <li>link 3</li>
+            <li>link 4</li>
+            <li>link 5</li>
+            <li>link 6</li>
+            <li>link 7</li>
+        </ul>
+    </div>
+    <div id="context">
+        <div id="logowanie">
+            <form>
+                
             </form>
-        </article>
-    </main>
-
-    <footer>
-
-    </footer>
+        </div>
+    </div>
+    <div id="stopka">
+        Autor: Dominik Tucholski, Norbert Łukasiewicz
+    </div>
 </body>
 </html>

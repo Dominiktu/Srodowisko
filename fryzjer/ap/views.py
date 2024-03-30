@@ -14,25 +14,6 @@ def strona_glowna(request): # <-- to strona główna
 def tm(request):
     return redirect("strona_glowna")
 
-def zaloguj(reqest):
-    template = loader.get_template('logowanie.html')
-    context ={
-
-    }
-    form = uzytkownicy_rejestr(request.POST or None)
-    if form.is_valid():
-        # check if user is in DATE BASE
-        if(jest_w_DB):
-            reqest.session['zologany_imie']
-            reqest.session['zologany_ID']
-            reqest.session['cos']
-        else:
-            # ODDAJ ERROR
-            pass
-    context ={
-        'form':form,
-    }
-        
         
 # TO DO: REWORK 
 # def Strona_Umawiania_wizyt(request):
