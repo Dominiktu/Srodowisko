@@ -22,7 +22,7 @@ def zaloguj(reqest):
     form = uzytkownicy_rejestr(request.POST or None)
     if form.is_valid():
         # check if user is in DATE BASE
-        if(jet_w_DB):
+        if(jest_w_DB):
             reqest.session['zologany_imie']
             reqest.session['zologany_ID']
             reqest.session['cos']
