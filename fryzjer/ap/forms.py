@@ -13,6 +13,7 @@ class uzytkownicy_rejestr(forms.ModelForm):
             'login',
             'haslo', 
         )
+       
     def clean(self):
         dane = super(uzytkownicy_rejestr, self).clean()
         haslo = dane.get('haslo')
@@ -23,13 +24,20 @@ class uzytkownicy_rejestr(forms.ModelForm):
             )
  
 class uzytkownicy_login(forms.ModelForm):
-    haslo=forms.CharField(widget=forms.PasswordInput)
     class Meta:
         model = uzytkownicy
         fields =(
             'login',
             'haslo'
         )
+        widgets ={
+            'login': forms.TextInput(attrs={
+                'class': "forminput",
+            }),
+            'haslo': forms.PasswordInput(attrs={
+                'class':"forminput",
+            })
+        }
 
 class uslugi_edit(forms.ModelForm):
     wybory = {"1": "First", "2": "Second"}

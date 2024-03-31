@@ -31,4 +31,6 @@ class rezerwacje(models.Model):
 class uslugi(models.Model):
     nazwa = models.CharField(max_length=255)
     czas = models.IntegerField()
+    
+
 

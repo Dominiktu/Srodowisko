@@ -1,0 +1,27 @@
+#logowanie{
+    background-color: gray;
+    margin: 0 auto;
+    border-radius: 7px;
+    padding: 25px;
+    width: 300px;
+    text-align: center;
+    margin-top:200px;
+}
+.forminput{
+    all:unset;
+    border-bottom: 1px black solid;
+}
+.butt{
+    background-color: darkgray;
+    margin: 0px 7px 0px 7px;
+    border:1px black solid;
+    padding: 5px;
+    border-radius: 4px;
+}
+#error{
+    display: none;
+}
+#error a p{
+ font-size: small;
+ text-decoration: none;
+}

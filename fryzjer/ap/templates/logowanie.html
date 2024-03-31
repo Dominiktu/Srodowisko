@@ -6,6 +6,16 @@
     <title>Twój Barber</title>
     <link rel="stylesheet" type = "text/css" href="{% static 'Style_glowne.css' %}">
     <link rel="stylesheet" type = "text/css" href="{% static 'style/Style_login.css' %}">
+    <script>
+        function error(){
+            document.getElementById('form').style.display='none';
+            document.getElementById('error').style.display='block';
+        }
+        function okerror(){
+            document.getElementById('form').style.display='block';
+            document.getElementById('error').style.display='none';
+        }
+    </script>
 </head>
 <body>
     <div id="banner">
@@ -18,7 +28,7 @@
         <ul>
             <li><a href="{% url 'strona_glowna' %}">Strona główna</a></li>
             <li><a href="{% url 'zaloguj' %}">Zaloguj</a></li>
-            <li>link 3</li>
+            <li><a href="{% url 'wyloguj' %}">Wyloguj</a></li>
             <li>link 4</li>
             <li>link 5</li>
             <li>link 6</li>
@@ -27,10 +37,26 @@
     </div>
     <div id="context">
         <div id="logowanie">
-            <form>
-                
+            <div id="error">
+                <p>login i/lub hasło zostało złe wpisane</p>
+                <input class="butt" type="button" onclick="okerror()" value="Okej">
+                <a href=""><p>jesli nie masz konta pierw sie zajerestrój </p></a>
+            </div>
+            <form id="form" action="{% url 'zaloguj' %}" method="POST">
+                {% csrf_token %}
+                <label for="login">Login: </label>
+                {{ form.login }}<br><br>
+                <label for="haslo">Hasło: </label>
+                {{ form.haslo }}<br><br>
+                <input type="submit" id="submit" class="butt" value="Zaloguj">
+                <a href="{% url 'strona_glowna' %}"> <input type="button" id="anuluj" class="butt" onclick="" value="Anuluj"></form></a>
             </form>
         </div>
+        {% if error == '1' %}
+            <script>
+                error();
+            </script>
+        {% endif %}
     </div>
     <div id="stopka">
         Autor: Dominik Tucholski, Norbert Łukasiewicz
