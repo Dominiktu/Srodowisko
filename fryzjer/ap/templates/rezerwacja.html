@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Twój Barber</title>
+    <link rel="stylesheet" type = "text/css" href="{% static 'Style_glowne.css' %}">
+    <link rel="stylesheet" type = "text/css" href="{% static 'style/style_rezerwacja.css' %}"> 
+</head>
+<body>
+    <div id="banner">
+        <img src="{% static 'logo2k.png' %}" class="logo" alt="logo">
+        <h1>
+            Twój Barber
+        </h1>
+    </div>
+    <div id = "menu">
+        <ul>
+            <li><a href="{% url 'strona_glowna' %}">Strona główna</a></li>
+            <li><a href="{% url 'zaloguj' %}">Zaloguj</a></li>
+            <li><a href="{% url 'wyloguj' %}">Wyloguj</a></li>
+            <li><a href="{% url 'rejestr' %}">Rejestracja</a></li>
+            <li>link 5</li>
+            <li>link 6</li>
+            <li>link 7</li>
+        </ul>
+    </div>
+    <div id="context">
+        <script>
+            tab = "{{ kalendarz|safe }}";
+            temp = tab.slice(2, tab.length-2);
+            tab = temp.split("], [");
+            tablica = "<table id='tablica'>";
+            tablica += "<tr><td id='mies' colspan='7'>{{ miesiac }}</td></tr>"
+            tablica += "<tr id='dnityg'><td> Pn. </td><td> Wt. </td><td> Śr. </td><td> Czw. </td><td> Pt. </td><td> Sob. </td><td> Ndz. </td></tr>"
+            tab.forEach((tydzien) => {
+                tablica += "<tr>";
+                dzien = tydzien.split(", ");
+                dzien.forEach((dzien) => {
+                    if (dzien == "0") {
+                        tablica += ("<td>&nbsp</td>");
+                    } else {
+                    tablica += ("<td id='dni'>" + dzien + "</td>");
+                    }
+                });
+                tablica += "</tr>";
+            });
+            tablica += "</table>";
+            document.write(tablica);
+        </script>
+    </div>
+    <div id="stopka">
+        Autor: Dominik Tucholski, Norbert Łukasiewicz
+    </div>
+</body>
+</html>

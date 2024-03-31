@@ -46,3 +46,4 @@ class uslugi_edit(forms.ModelForm):
             'nazwa',
             'czas',
         )
+
