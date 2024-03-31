@@ -1,51 +1,94 @@
-<!-- Sprawdz -->
-
-{% load static %} 
-<!DOCTYPE html> 
+{% load static %}
+<!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
     <title>Twój Barber</title>
-    <link rel="stylesheet" href="{% static 'Main_Style.css' %}">
-    <style>
-        *{
-            color: white;
+    <link rel="stylesheet" type = "text/css" href="{% static 'Style_glowne.css' %}">
+    <link rel="stylesheet" type = "text/css" href="{% static 'style/style_rejestr.css' %}">
+    <script>
+        function error(message){
+            document.getElementById('errormessage').innerHTML = "{{ error }}";
+            document.getElementById('form').style.display='none';
+            document.getElementById('error').style.display='block';
         }
-
-    </style>
+        function okerror(){
+            document.getElementById('form').style.display='block';
+            document.getElementById('error').style.display='none';
+        }
+    </script>
 </head>
 <body>
-    <nav>
-        <img src="logo.png" alt="logo">
-        <div id="F">
-            <ul>
-                <li><a href="{% url 'index' %}">Strona Główna</a></li>
-                <li><a href="{% url 'kalen' %}">Umów wizytę</a></li>
-                <li><a href="{% url 'kontantk'%}">Kontakt</a></li>
-            </ul>
-        </div>
-        <script>
-            function redirectToURL(url) {
-                window.location.href = url;
-            }
-        </script>
-    </nav>
-
-    <main>
-        <article id = "Banner">
-            <img src="{% static 'banner.jpg'%}" alt="baner">
-        </article>
-        <article id = "Tresc">
-            <form method="post">
-                <!-- {% csrf_token %} -->
-                {{ form.as_p }}
-                <button type="submit">Submit</button>
+    <div id="banner">
+        <img src="{% static 'logo2k.png' %}" class="logo" alt="logo">
+        <h1>
+            Twój Barber
+        </h1>
+    </div>
+    <div id = "menu">
+        <ul>
+            <li><a href="{% url 'strona_glowna' %}">Strona główna</a></li>
+            <li><a href="{% url 'zaloguj' %}">Zaloguj</a></li>
+            <li><a href="{% url 'wyloguj' %}">Wyloguj</a></li>
+            <li><a href="{% url 'rejestr' %}">Rejestracja</a></li>
+            <li>link 5</li>
+            <li>link 6</li>
+            <li>link 7</li>
+        </ul>
+    </div>
+    <div id="context">
+        <div id="logowanie">
+            <div id="error">
+                <p id="errormessage"></p>
+                <input class="butt" type="button" onclick="okerror()" value="Okej">
+            </div>
+            <form id="form" action="{% url 'rejestr' %}" method="POST">
+                {% csrf_token %}
+                <h1>Rejestracja</h1>
+                <table id="tab">              
+                    <tr>
+                        <td><label for="imie">Imie: </label></td>
+                        <td>{{ form.imie }}</td>
+                    </tr>
+                    <tr>
+                        <td><label for="nazwisko">Nazwisko: </label></td>
+                        <td>{{ form.nazwisko }}</td>
+                    </tr>
+                    <tr>
+                        <td><label for="login">Login: </label></td>
+                        <td>{{ form.login }}</td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email: </label></td>
+                        <td>{{ form.email }}</td>
+                    </tr>
+                    <tr>
+                        <td><label for="nr_tel">Telefon: </label></td>
+                        <td>{{ form.nr_tel }}</td>
+                    </tr>
+                    <tr>
+                        <td><label for="haslo">Hasło: </label></td>
+                        <td>{{ form.haslo }}</td>
+                    </tr>
+                    <tr>
+                        <td><label for="potwierdz_haslo">Powtórz hasło:   </label></td>
+                        <td>{{ form.potwierdz_haslo }}</td>
+                    </tr>
+                </table>
+                <br>
+ 
+                <input type="submit" id="submit" class="butt" value="Zajerestruj">
+                <a href="{% url 'strona_glowna' %}"> <input type="button" id="anuluj" class="butt" onclick="" value="Anuluj"></form></a>
             </form>
-        </article>
-    </main>
-
-    <footer>
-
-    </footer>
+        </div>
+        {% if error != "" %}
+            <script>
+                error();
+            </script>
+        {% endif %}
+    </div>
+    <div id="stopka">
+        Autor: Dominik Tucholski, Norbert Łukasiewicz
+    </div>
 </body>
 </html>

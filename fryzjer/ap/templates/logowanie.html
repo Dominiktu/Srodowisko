@@ -29,7 +29,7 @@
             <li><a href="{% url 'strona_glowna' %}">Strona główna</a></li>
             <li><a href="{% url 'zaloguj' %}">Zaloguj</a></li>
             <li><a href="{% url 'wyloguj' %}">Wyloguj</a></li>
-            <li>link 4</li>
+            <li><a href="{% url 'rejestr' %}">Rejestracja</a></li>
             <li>link 5</li>
             <li>link 6</li>
             <li>link 7</li>
@@ -40,9 +40,10 @@
             <div id="error">
                 <p>login i/lub hasło zostało złe wpisane</p>
                 <input class="butt" type="button" onclick="okerror()" value="Okej">
-                <a href=""><p>jesli nie masz konta pierw sie zajerestrój </p></a>
+                <a href="{% url 'rejestr' %}"><p>jesli nie masz konta pierw sie zajerestrój </p></a>
             </div>
             <form id="form" action="{% url 'zaloguj' %}" method="POST">
+                <h1>Logowanie</h1>
                 {% csrf_token %}
                 <label for="login">Login: </label>
                 {{ form.login }}<br><br>

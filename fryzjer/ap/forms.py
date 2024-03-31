@@ -1,5 +1,6 @@
 from django import forms
 from .models import uzytkownicy,rezerwacje,uslugi
+import re
 
 class uzytkownicy_rejestr(forms.ModelForm):
     haslo=forms.CharField(widget=forms.PasswordInput)
@@ -12,17 +13,13 @@ class uzytkownicy_rejestr(forms.ModelForm):
             'nr_tel',
             'login',
             'haslo', 
+            'email',
         )
-       
-    def clean(self):
-        dane = super(uzytkownicy_rejestr, self).clean()
-        haslo = dane.get('haslo')
-        potwierdz_haslo = dane.get('potwierdz_haslo')
-        if haslo != potwierdz_haslo:
-            raise forms.ValidationError(
-                "hasła nie są takie same"
-            )
- 
+        widgets={
+            'nr_tel': forms.TextInput(attrs={
+                'placeholder': 'np. +48123456789',
+            }),
+        }
 class uzytkownicy_login(forms.ModelForm):
     class Meta:
         model = uzytkownicy

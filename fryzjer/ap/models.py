@@ -5,7 +5,7 @@ class uzytkownicy(models.Model):
     imie = models.CharField(max_length=255)
     nazwisko = models.CharField(max_length=255)
     nr_tel = models.CharField(
-        max_length=9, 
+        max_length=13, 
         validators=[
             RegexValidator(
                 regex=r'^[0-9\+]+[0-9]{11,17}$|^[0-9]{9,15}$',

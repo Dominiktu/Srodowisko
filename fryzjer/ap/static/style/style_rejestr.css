@@ -1,0 +1,26 @@
+#logowanie{
+    background-color: gray;
+    margin: 0 auto;
+    border-radius: 7px;
+    padding: 25px;
+    width: 350px;
+    text-align: center;
+    margin-top:200px;
+}
+#tab input{
+    all:unset;
+    border-bottom: 1px black solid;
+}
+.butt{
+    background-color: darkgray;
+    margin: 0px 7px 0px 7px;
+    border:1px black solid;
+    padding: 5px;
+    border-radius: 4px;
+}
+#tab input::placeholder{
+    color: rgba( 70, 70, 70, 0.85);
+}
+#error{
+    display: none;
+}

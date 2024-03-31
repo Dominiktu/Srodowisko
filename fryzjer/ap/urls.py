@@ -5,4 +5,5 @@ urlpatterns =[
     path('Strona_glowna',views.strona_glowna, name='strona_glowna'),
     path('wyloguj', views.wyloguj , name='wyloguj'),
     path('Zaloguj', logowanie.zaloguj , name='zaloguj'),
+    path('Rejestracja', logowanie.rejestr , name='rejestr'),
 ]
